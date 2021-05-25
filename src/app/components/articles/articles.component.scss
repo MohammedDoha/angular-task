@@ -1,0 +1,610 @@
+// the used colors
+$frist-color:#fff;
+$second-color:rgba(0 ,0 ,0 ,.7);
+$third-color:#004977;
+$four-color:#14A99B;
+$five-color:#aaa;
+$six-color:#d9d9d9;
+$seven-color:#f1f1f1;
+$eight-color:#2762f3;
+$nine-color:#171717;
+$ten-color: #3d3d3d;
+$eleven-color: #404040;
+$twilve-color:#000;
+$Thirteen-color:#003D64;
+$Fourteen-color:#145F8E;
+$Fifteen-color:#0D7F97;
+$Sixteen-color:#666666;
+$Seventeen-color:#D5D5D5;
+$Eighteen-color:#999999;
+// the used colors
+
+img {
+    width: 100%;
+}
+
+.main-header {
+    // background: url("../../../assets/images/header-bg.jpg") no-repeat center center/cover;
+    position: relative;
+    z-index: 111;
+    &::before {
+        background-color: rgba(0, 0, 0, 0.37);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    .top-header-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: $frist-color;
+        border-bottom: 1px solid rgba(225,225,225,.5);
+        z-index: 111;
+
+        .Trustees {
+            font-family: 'sstroman';
+            font-size: 13px;
+            color: $frist-color;
+            z-index: 11;
+            text-decoration: none;
+            padding: 10px 25px;
+            transition: all .3s ease;
+            &:hover {
+                background: $third-color;;
+            }
+        }
+        .FAQ {
+            font-family: 'sstroman';
+            font-size: 13px;
+            color: $frist-color;
+            z-index: 11;
+            text-decoration: none;
+            padding: 10px 25px;
+            transition: all .3s ease;
+            &:hover {
+                background: $third-color;;
+            }
+        }
+        .headphone {
+            font-family: 'sstroman';
+            font-size: 13px;
+            color: $frist-color;
+            z-index: 11;
+            text-decoration: none;
+            padding: 10px 25px;
+            transition: all .3s ease;
+            &:hover {
+                background: $third-color;;
+            }
+        }
+        .arabic {
+            font-family: 'sstroman';
+            font-size: 13px;
+            color: $frist-color;
+            z-index: 11;
+            text-decoration: none;
+            padding: 10px 25px;
+            transition: all .3s ease;
+            &:hover {
+                background: $third-color;;
+            }
+        }
+        .Knowledge {
+            background: $third-color;
+            font-family: 'sstroman';
+            font-size: 13px;
+            color: $frist-color;
+            padding: 10px 25px;
+            border: none;
+            outline: none;
+            z-index: 11;
+        }
+        .Services {
+            background: $four-color;
+            font-family: 'sstroman';
+            font-size: 13px;
+            color: $frist-color;
+            padding: 10px 25px;
+            border: none;
+            outline: none;
+            z-index: 11;
+        }   
+    }
+}
+
+.wrap {
+    :root {
+        font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
+    }
+    body, button, input {
+        font: 1em Hind, sans-serif;
+        line-height: 1.5em;
+    }
+    body, .search-bar {
+        display: flex;
+    }
+    .search-bar input,
+    .search-btn, 
+    .search-btn:before, 
+    .search-btn:after {
+        transition: all 0.25s ease-out;
+    }
+    .search-bar input,
+    .search-btn {
+        width: 3em;
+        height: 3em;
+    }
+    .search-bar input:invalid:not(:focus),
+    .search-btn {
+        cursor: pointer;
+    }
+    .search-bar,
+    .search-bar input:focus,
+    .search-bar input:valid  {
+        width: 100%;
+    }
+    .search-bar input:focus,
+    .search-bar input:not(:focus) + .search-btn:focus {
+        outline: transparent;
+    }
+    .search-bar input {
+        background: transparent;
+        border-radius: 1.5em;
+        box-shadow: 0 0 0 0.4em $frist-color inset;
+        padding: 0.75em;
+        transform: translate(0.5em,0.5em) scale(0.5);
+        transform-origin: 100% 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    .search-bar input::-webkit-search-decoration {
+        -webkit-appearance: none;
+    }
+    .search-bar input:focus,
+    .search-bar input:valid {
+        background: $frist-color;
+        border-radius: 0.375em 0 0 0.375em;
+        box-shadow: 0 0 0 0.1em $six-color inset;
+        transform: scale(1);
+    }
+    .search-btn {
+        background: $frist-color;
+        border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+        padding: 0.75em;
+        position: relative;
+        transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
+        transform-origin: 0 50%;
+    }
+    .search-btn:before, 
+    .search-btn:after {
+        content: "";
+        display: block;
+        opacity: 0;
+        position: absolute;
+    }
+    .search-btn:before {
+        border-radius: 50%;
+        box-shadow: 0 0 0 0.2em $seven-color inset;
+        top: 0.75em;
+        left: 0.75em;
+        width: 1.2em;
+        height: 1.2em;
+    }
+    .search-btn:after {
+        background: $seven-color;
+        border-radius: 0 0.25em 0.25em 0;
+        top: 51%;
+        left: 51%;
+        width: 0.75em;
+        height: 0.25em;
+        transform: translate(0.2em,0) rotate(45deg);
+        transform-origin: 0 50%;
+    }
+    .search-btn span {
+        display: inline-block;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+    }
+    
+    /* Active state */
+    .search-bar input:focus + .search-btn,
+    .search-bar input:valid + .search-btn {
+        background: $eight-color;
+        border-radius: 0 0.375em 0.375em 0;
+        transform: scale(1);
+    }
+    .search-bar input:focus + .search-btn:before, 
+    .search-bar input:focus + .search-btn:after,
+    .search-bar input:valid + .search-btn:before, 
+    .search-bar input:valid + .search-btn:after {
+        opacity: 1;
+    }
+    .search-bar input:focus + .search-btn:hover,
+    .search-bar input:valid + .search-btn:hover,
+    .search-bar input:valid:not(:focus) + .search-btn:focus {
+        background: $third-color;
+    }
+    .search-bar input:focus + .search-btn:active,
+    .search-bar input:valid + .search-btn:active {
+        transform: translateY(1px);
+    }
+    
+    @media screen and (prefers-color-scheme: dark) {
+        body, input {
+            color: $seven-color;
+        }
+        body {
+            background: $nine-color;
+        }
+        .search-bar input {
+            box-shadow: 0 0 0 0.4em $seven-color inset;
+        }
+        .search-bar input:focus,
+        .search-bar input:valid {
+            background: $ten-color;
+            box-shadow: 0 0 0 0.1em $ten-color inset;
+        }
+        .search-btn {
+            background: $seven-color;
+        }
+    }
+}
+
+.nav-link {
+    color: $frist-color !important;
+    font-family: "sstroman";
+    font-size: 16px;
+}
+
+.mdl {
+    margin: 0;
+    color: $frist-color !important;
+    font-family: "sstroman";
+    font-size: 16px;
+}
+
+.center-header-wrapper {
+    border-bottom: 1px solid rgba(225,225,225,.5);
+    margin: 10px 0px 45px 0;
+    .container-fluid {
+        padding: 0;
+    }
+
+    .hh {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    li {
+        list-style: none;
+    }
+
+    img {
+        margin-left: 10px;
+    }
+
+    .main-top-title {
+        padding: 10px 0;
+    }
+}
+
+.main-top-title {
+    padding: 15px 0;
+    .top-txt {
+        display: flex;
+        align-items: center;
+        .frist-txt {
+            margin:0 10px 0 0;
+            color: $eleven-color;
+            font-family: "sstroman";
+            font-size: 10px;
+        }
+        .second-txt {
+            margin:0 0 0 10px;
+            color: $eleven-color;
+            font-family: "sstroman";
+            font-size: 10px;
+        }
+    }
+    .third-txt {
+        color: $four-color;
+        font-family: "sstroman";
+        font-size: 24px;
+        padding: 0px 0 5px 0;
+    }
+    
+    .four-txt {
+        color: $eleven-color;
+        font-family: "sstroman";
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .line {
+        width: 65px;
+        height: 4px;
+        background: $four-color;
+    }
+}
+
+
+.main-article-page-wrapper {
+    .choosing {
+        color: $Fifteen-color;
+        font-family: "sstbold";
+        font-size: 30px;
+    }
+    .mines-wraping {
+        padding: 0 10rem;
+
+        .frist-article , .second-article , .third-article , .four-article , .five-article{
+            padding: 0 10px;
+            font-size: 16px;
+            color: $eleven-color;
+            font-family: "sstroman";
+        }
+    }
+}
+
+.article-line {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .line {
+    width: 65px;
+    justify-content: center;
+    align-items: center;
+    height: 3px;
+    background: $Fifteen-color;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    }
+}
+
+.articles-form {
+    .write-comment {
+        color: $Fifteen-color;
+        font-size: 24px;
+        font-family: "sstbold";
+        padding: 0;
+    }
+    .comment {
+        padding: 0;
+        color: $Sixteen-color;
+        font-size: 20px;
+        font-family: "sstbold";
+    }
+    .user-comment {
+        border: 1px solid $Seventeen-color;
+        padding: 10px;
+        width: 600px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 1rem 0;
+    }
+    .label-name {
+        color: $Sixteen-color;
+        font-size: 20px;
+        font-family: "sstbold";
+        padding: 10px 0;
+    }
+    .input-form {
+        width: fit-content;
+        padding: 10px 0 10px 10px;
+        margin: 0 0 10px 0;
+        width: 320px;
+        border-radius: 5px;
+        border: 1px solid $Seventeen-color;
+        outline: none;
+    }
+    .label-email {
+        color: $Sixteen-color;
+        font-size: 20px;
+        font-family: "sstbold";
+        padding: 10px 0;
+    }
+    .second-input-form {
+        width: 320px !important;
+        width: fit-content;
+        padding: 10px 0 10px 10px;
+        margin: 0 0 10px 0;
+        border-radius: 5px;
+        border: 1px solid $Seventeen-color;
+        outline: none;
+    }
+    .post-comment {
+        width: fit-content;
+        width: 115px;
+        height: 40px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        color: $frist-color;
+        background: $four-color;
+    }
+    .users-wrapper {
+        padding: 0;
+        .frist-user {
+            .user-name {
+                color: $Sixteen-color;
+                font-size: 20px;
+                font-family: "sstbold";
+                margin: 0;
+            }
+            .user-email {
+                color: $Eighteen-color;
+                font-size: 20px;
+                font-family: "sstroman";
+            }
+            .user-comment {
+                color: $Eighteen-color;
+                font-size: 20px;
+                font-family: "sstroman";
+                border: none;
+                padding: 0;
+            }
+        }
+        .second-user {
+            .user-name {
+                color: $Sixteen-color;
+                font-size: 20px;
+                font-family: "sstbold";
+            }
+            .user-email {
+                color: $Eighteen-color;
+                font-size: 20px;
+                font-family: "sstroman";
+            }
+            .user-comment {
+                color: $Eighteen-color;
+                font-size: 20px;
+                font-family: "sstroman";
+            }
+        }
+        .third-user {
+            .user-name {
+                color: $Sixteen-color;
+                font-size: 20px;
+                font-family: "sstroman";
+            }
+            .user-email {
+                color: $Eighteen-color;
+                font-size: 20px;
+                font-family: "sstroman";
+            }
+            .user-comment {
+                color: $Eighteen-color;
+                font-size: 20px;
+                font-family: "sstroman";
+            }
+        }
+    }
+}
+
+.main-footer {
+    background: $Thirteen-color;
+    padding: 3rem 0 0px 0;
+    margin: 2rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .social-wrapper {
+        display: flex;
+        align-items: center;
+        img {
+            margin: 0 5px;
+            width: 80%;
+            border-radius: 10px;
+        }
+    }
+    .mdl-footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 13rem;
+
+        .btm {
+            .all-right {
+                text-align: center;
+                margin: 20px 0;
+                color: $frist-color;
+            }
+        }
+    }
+    .right-footer-wrapper {
+        justify-content: end;
+        display: flex;
+        flex-direction: column;
+        .newsletter {
+            font-size: 16px;
+            color: $frist-color;
+            font-family: "sstbold";
+        }
+        .enter-email {
+            font-size: 16px;
+            color: $frist-color;
+            font-family: "sstlight";
+        }
+        form {
+            display:flex;
+            flex-direction:row;
+            border:1px solid $Fourteen-color;
+            padding:2px;
+            border-radius: 4px;
+          }
+          input {
+            flex-grow:2;
+            border:none;
+            background: transparent !important;
+            color: $frist-color !important;
+            padding-left: 15px;
+          }
+          
+          input:focus {
+            outline: none;
+          }
+          
+          button {
+            border:1px solid $four-color;
+            background:$four-color;
+            color:white;
+            font-size: 14px;
+            font-family: "sstlight";
+            padding: 5px 20px;
+            border-radius: 4px;
+
+          }
+    }
+}
+
+@media (max-width: 974px) {
+    .center-header-wrapper .hh {
+        flex-direction: column;
+        align-items: end;
+    }
+    .search-bar {
+        position: relative;
+        right: 31px;
+    }
+    .nav-link {
+        padding: .5rem 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-header .top-header-wrapper {
+        flex-direction: column;
+        align-items: end;
+    }
+    .main-footer .social-wrapper {
+        justify-content: center;
+        margin: 15px 0;
+    }
+    .main-footer .right-footer-wrapper {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .main-article-page-wrapper .mines-wraping {
+        padding: 0;
+    }
+    .articles-form .users-wrapper .frist-user .user-comment {
+        width: fit-content;
+    }
+    .articles-form .users-wrapper .second-user .user-comment {
+        width: fit-content;
+    }
+    .articles-form .users-wrapper .third-user .user-comment {
+        width: fit-content;
+    }
+}

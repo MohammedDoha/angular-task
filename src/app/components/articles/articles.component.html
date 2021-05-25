@@ -1,0 +1,195 @@
+<div class="main-page-wrapper">
+    <header [ngStyle]="{'background-image': getUrl()}" class="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="top-header-wrapper">
+                        <a href="#" class="Trustees">Trustees</a>
+                        <a href="#" class="FAQ">FAQ</a>
+                        <a href="#" class="headphone">headphone : <span>000000000</span></a>
+                        <a href="#" class="arabic">عربي</a>
+                        <button class="Knowledge">Knowledge Center</button>
+                        <button class="Services">E-Services</button>
+                    </div>
+                    <div class="col-12">
+                        <div class="center-header-wrapper">
+                            <nav class="navbar navbar-expand-lg navbar-light">
+                                <div class="container-fluid">
+                                  <a class="navbar-brand" href="#">
+                                      <img src="../../../assets/images/bravo-9.png" alt="">
+                                  </a>
+                                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                  </button>
+                                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                                    <form class="d-flex">
+                                        <ul class="hh">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Commission
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                  <li><a class="dropdown-item" href="#">Action</a></li>
+                                                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                  <li><hr class="dropdown-divider"></li>
+                                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                </ul>
+                                              </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    System
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                  <li><a class="dropdown-item" href="#">Action</a></li>
+                                                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                  <li><hr class="dropdown-divider"></li>
+                                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                </ul>
+                                              </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Training
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                  <li><a class="dropdown-item" href="#">Action</a></li>
+                                                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                  <li><hr class="dropdown-divider"></li>
+                                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                </ul>
+                                              </li>
+                                              <p class="mdl">Announcements</p>
+                                              <!-- <img src="../../../assets/images/Group 26.svg" alt=""> -->
+                                              <div class="wrap">
+                                                <form action="" class="search-bar">
+                                                    <input type="search" name="search" pattern=".*\S.*" required>
+                                                    <button class="search-btn" type="submit">
+                                                        <span>Search</span>
+                                                    </button>
+                                                </form>
+                                              </div>
+                                        </ul>
+                                    </form>
+                                  </div>
+                                </div>
+                              </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-top-title">
+        <div class="container">
+                <div class="top-txt"><p class="frist-txt">Main</p> | <p class="second-txt">Knowledge Center</p></div>
+                <p class="four-txt">Knowledge Center</p>
+                <p class="third-txt">Articles</p>
+            <div class="line"></div>
+        </div>
+    </div>
+    
+    <div class="main-article-page-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="choosing"> {{oneArticles.title}} </p>
+                </div>
+                <div class="mines-wraping">
+                    <img src="../../../assets/images/article-img.png" alt="" class="article-wide-img">
+                    <p class="frist-article">
+                        {{oneArticles.body}}
+                    </p>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="article-line">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="articles-form">
+        <div class="container">
+            <div class="row">
+                <p class="write-comment">Leave a Comment</p>
+                <p class="comment">Your comment</p>
+                <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                    <textarea class="user-comment" id="" cols="30" rows="10" placeholder="Type your comment here." formControlName="comment"></textarea>
+                    <label class="label-name" for="name">Name</label>
+                    <input checkedtext type="text" class="input-form" placeholder="Type your name here." formControlName="name">
+                    <label class="label-email" for="email">E-mail</label>
+                    <input type="label-text" class="second-input-form" placeholder="Type your email here." formControlName="email">
+                    <button [disabled]="!profileForm.valid" (click)="postComments()" class="post-comment">Post</button>
+                </form>
+                <div class="users-wrapper">
+                    <div class="frist-user" *ngFor="let comment of oneComment">
+                        <p class="user-name"> {{comment.name}} </p>
+                        <p class="user-email"> {{comment.email}} </p>
+                        <p class="user-comment"> {{comment.body}} </p>
+                    </div>
+                    <div class="users-wrapper" *ngFor="let item of Comment">
+                        <div class="frist-user">
+                            <p class="user-name">{{item.name}}</p>
+                            <p class="user-email">{{item.email}}</p>
+                            <p class="user-comment">{{item.comment}}</p>
+                        </div>
+                    </div>
+                    <!-- <div class="second-user">
+                        <p class="user-name">Ahmed Mostafa</p>
+                        <p class="user-email">a.mostafa@mail.com</p>
+                        <p class="user-comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor mauris, bibendum ac commodo in, congue sit amet enim. Donec blandit gravida enim sed vehicula. Morbi faucibus lacinia vulputate. Morbi et ornare </p>
+                    </div>
+                    <div class="third-user">
+                        <p class="user-name">Ahmed Mostafa</p>
+                        <p class="user-email">a.mostafa@mail.com</p>
+                        <p class="user-comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor mauris, bibendum ac commodo in, congue sit amet enim. Donec blandit gravida enim sed vehicula. Morbi faucibus lacinia vulputate. Morbi et ornare </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class="social-wrapper">
+                        <a href="#" class="facebook"><img src="../../../assets/images/facebook.jpg" alt=""></a>
+                        <a href="#" class="degree"><img src="../../../assets/images/degree.jpg" alt=""></a>
+                        <a href="#" class="linkedin"><img src="../../../assets/images/linked-in.jpg" alt=""></a>
+                        <a href="#" class="youtube"><img src="../../../assets/images/youtube.jpg" alt=""></a>
+                        <a href="#" class="twitter"><img src="../../../assets/images/twitter.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class="mdl-footer-wrapper">
+                        <div class="top">
+                            <img src="../../../assets/images/bravo-white.png" alt="">
+                        </div>
+                        <div class="btm">
+                            <img src="../../../assets/images/footer-md-img.png" alt="">
+                            <p class="all-right">All rights reserved © 2020</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class="right-footer-wrapper">
+                        <p class="newsletter">Newsletter</p>
+                        <p class="enter-email">Enter your email to get all new about bankruptcy</p>
+                        <form>
+                            <input placeholder="Write your email" />
+                            <button>Join</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
